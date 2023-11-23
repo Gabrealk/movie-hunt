@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function SortButtons() {
   return (
-    <main className="flex bg-screen bg-blue-500">
+    <main className="flex bg-screen">
 
         <div className="flex flex-row">
             <div>
