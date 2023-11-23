@@ -16,12 +16,12 @@ export default function SearchBarFunction() {
 
     return (
         <main>
-            <div className="px-48 text-black ">
+            <div className="text-black pl-96">
                 <input
                     type="text"
                     placeholder="Search..."
                     value={search}
-                    className="rounded-full p-2"
+                    className="rounded-full p-2 "
                     onChange={handleSearchChange}
                 />
 
