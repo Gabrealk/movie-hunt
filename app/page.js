@@ -1,5 +1,7 @@
 import React from 'react';
-import SortButtons from './buttons/sortButtons';
+import GenreButton from './buttons/GenreButtons';
+import YearButton from './buttons/YearButton';
+import FavoritesButton from './buttons/favoritesButton';
 import SearchBar from './SearchBar/SearchBar'
 
 export default function Home() {
@@ -9,9 +11,15 @@ export default function Home() {
         <font size = "10"><h1 className="font-bold">movie-hunt</h1></font>
       </div>
 
-      <SortButtons />
+      <div>
+        <GenreButton />
+        <YearButton />
+        <FavoritesButton />
+      </div>
+
       <SearchBar />
       
+
     </main>
   )
 }

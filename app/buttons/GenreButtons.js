@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 
-export default function DropdownButton() {
+export default function GenreButton() {
     //state variables for the genre buttons
         const [selectedGenreOption, setSelectedGenreOption] = useState("Select Genre");
         const [isGenreDropdownOpen, setGenreDropdownOpen] = useState(false);
@@ -18,13 +18,11 @@ export default function DropdownButton() {
     //state variables for the favorites button
 
 
-  
-
   return (
         <main className="relative inline-block text-black">
 
             <div>
-                    <button
+                <button
                     onClick={() => setGenreDropdownOpen(!isGenreDropdownOpen)}
                     className="font-bold px-7 py-2 
                     text-black 
@@ -34,6 +32,7 @@ export default function DropdownButton() {
                     >
                     {selectedGenreOption}
                 </button>
+
                 {isGenreDropdownOpen && (
                     <div className="absolute mt-2 bg-white border border-gray-500 rounded shadow-md">
                         {options.map((option) => (
@@ -45,25 +44,6 @@ export default function DropdownButton() {
                 )}
             </div>
 
-            <div>
-                <button className="font-bold 
-                        px-7 py-2 
-                        text-black 
-                        bg-blue-700 
-                        border-2 border-black m-4 rounded 
-                        hover:bg-blue-500">year
-                </button>
-            </div>
-
-            <div>
-                <button className="font-bold 
-                        px-7 py-2 
-                        text-black 
-                        bg-blue-700 
-                        border-2 border-black m-4 rounded 
-                        hover:bg-blue-500">favorites
-                </button>
-            </div>
         </main>
  
     );
