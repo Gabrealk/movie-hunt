@@ -1,9 +1,8 @@
 "use client";
-
 import React, { useState } from 'react';
+import Link from 'next/link';
 
 export default function FavoritesButton() {
-    //state variables for the genre buttons
         const [selectedGenreOption, setSelectedGenreOption] = useState("Select Genre");
         const [isGenreDropdownOpen, setGenreDropdownOpen] = useState(false);
     //different options for the genre button
@@ -25,12 +24,14 @@ export default function FavoritesButton() {
                         text-black 
                         bg-blue-700 
                         border-2 border-black m-4 rounded 
-                        hover:bg-blue-500">year
+                        hover:bg-blue-500">
+                        <Link href="favoritePage">Favorites</Link>
                 </button>
             </div>
 
+
+
         </main>
- 
+
     );
 }
-

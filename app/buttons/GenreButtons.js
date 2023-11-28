@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 
 export default function GenreButton() {
     //state variables for the genre buttons
-        const [selectedGenreOption, setSelectedGenreOption] = useState("Select Genre");
+        const [selectedGenreOption, setSelectedGenreOption] = useState("Genre");
         const [isGenreDropdownOpen, setGenreDropdownOpen] = useState(false);
     //different options for the genre button
         const options = ["Action", "Adventure", "Comedy", "Drama", "Sci-Fi"];
