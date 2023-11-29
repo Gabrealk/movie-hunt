@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useState } from 'react';
-
+import 'bootstrap/dist/css/bootstrap.css';
 import 'components/App.css'
 import MovieList from '@/components/MovieList';
 import Headerspace from '@/header';
