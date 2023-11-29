@@ -39,7 +39,7 @@ const App = () => {
           <div className="grid grid-cols-5 gap-2"> 
                   <div>
                       <Image src="//placehold.it/250" alt="" />
-                      <h3>m1</h3>
+                      <h3>m 1</h3>
                   </div>
                   <div>
                       <Image src="//placehold.it/250" alt="" />
