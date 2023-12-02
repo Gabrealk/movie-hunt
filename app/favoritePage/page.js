@@ -1,25 +1,67 @@
-import Link from "next/link";
-import React from "react"
+"use client";
+import React, { useEffect, useState } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'components/App.css'
+import MovieList from '@/components/MovieList';
+import Headerspace from '@/header';
+// import AddFavourite from '@/components/AddFavorites';
+import ListHeading from '@/components/ListHeading';
+import RemoveFavourites from '@/components/RemoveFavourites';
 
-export default function favpage() {
+
+const favpage = () => {
+    const [movies, setMovies] = useState([]);
+    const [searchVaule, setSearchValue] = useState('');
+    const [Favourites, setFavourites] = useState([]);
+
+    const getMovieRequest = async(searchVaule) => {
+        const url = `http://www.omdbapi.com/?s=${searchVaule}&apikey=2e023f33`;
+        const response = await fetch(url);
+        const responsJson = await response.json();
+       
+        if (responsJson.Search) {
+            setMovies(responsJson.Search);
+          }
+    };
+
+    useEffect(()=> {
+        getMovieRequest(searchVaule);
+    }, [searchVaule]);
+
+    useEffect(() => {
+        const movieFavourites = JSON.parse(localStorage.getItem('movie-fav-app')) || [];
+        setFavourites(movieFavourites);
+    }, []);
+    
+
+    const saveLocalStorage = (items) => {
+        localStorage.setItem('movie-fav-app', JSON.stringify(items))
+    };
+
+    // const addFavMovie = (movie) => {
+    //     const newFavList = [...Favourites, movie];
+    //     setFavourites(newFavList);
+    //     saveLocalStorage(newFavList);
+    // };
+
+    const removeFavMovie = (movie) => {
+        const newFavList = Favourites.filter((fav) => fav.imdbID !== movie.imdbID);
+        setFavourites(newFavList);
+        saveLocalStorage(newFavList);
+    };
+
     return (
-        <main className="flex justify-center items-center w-full h-screen">
-            <div class="w-full max-w-md bg-black p-10 rounded-lg shadow-md">
-                <h1 className="text-2x1 text-white font-bold mb-8"> Favorite</h1>
-                <form>
-                    <label className="block mb-10">
-                        <input 
-                        type="text" placeholder="Item name" class="w-full mt-1 border-2 border-gray-300 p-2 rounded-lg font-sans">
-                        </input>
-                    </label>
-                    <button type="submit" className="w-full mt-4 py-2 px-4 bg-blue-700 hover:bg-blue-500 text-white rounded-lg">+</button> 
-                </form>
-                <label>
-                    <button className="w-full mt-4 py-2 px-4 bg-purple-700 hover:bg-purple-500 text-white rounded-lg">
-                    <Link href="/">&lt;- Back</Link>
-                    </button> 
-                   </label>
+        <div className='container-fluid movie-app'>
+            <div className='d-flex align-items-center mt-4'>
+            <ListHeading heading='Favourites'/>
             </div>
-        </main>
+            <div>
+                <MovieList movies={Favourites} handleFavClick={removeFavMovie} favouriteComponent={RemoveFavourites}/>
+            </div>
+        </div>
+        
+    
     );
-}
+};
+
+export default favpage;
