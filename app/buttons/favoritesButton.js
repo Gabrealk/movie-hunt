@@ -19,12 +19,11 @@ export default function FavoritesButton() {
 
 
             <div>
-                <button className="font-bold 
-                        px-7 py-2 
-                        text-black 
-                        bg-blue-700 
-                        border-2 border-black m-4 rounded 
-                        hover:bg-blue-500">
+                <button className="font-bold px-7 py-2 
+                    text-black 
+                    bg-gray-600 border-2 
+                    border-black m-4 rounded 
+                    hover:bg-blue-200">
                         <Link href="favoritePage">Favorites</Link>
                 </button>
             </div>

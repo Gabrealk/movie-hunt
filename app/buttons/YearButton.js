@@ -20,12 +20,11 @@ export default function YearButton() {
 
 
             <div>
-                <button className="font-bold 
-                        px-7 py-2 
-                        text-black 
-                        bg-blue-700 
-                        border-2 border-black m-4 rounded 
-                        hover:bg-blue-500">year
+                <button className="font-bold px-7 py-2 
+                    text-black 
+                    bg-gray-600 border-2 
+                    border-black m-4 rounded 
+                    hover:bg-blue-200">year
                 </button>
             </div>
 

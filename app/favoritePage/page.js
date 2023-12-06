@@ -7,9 +7,10 @@ import Headerspace from '@/header';
 // import AddFavourite from '@/components/AddFavorites';
 import ListHeading from '@/components/ListHeading';
 import RemoveFavourites from '@/components/RemoveFavourites';
+import Link from 'next/link';
 
 
-const favpage = () => {
+const Favpage = () => {
     const [movies, setMovies] = useState([]);
     const [searchVaule, setSearchValue] = useState('');
     const [Favourites, setFavourites] = useState([]);
@@ -58,10 +59,19 @@ const favpage = () => {
             <div>
                 <MovieList movies={Favourites} handleFavClick={removeFavMovie} favouriteComponent={RemoveFavourites}/>
             </div>
+
+            <button className="font-bold px-7 py-2 
+                    text-black 
+                    bg-gray-600 border-2 
+                    border-black m-4 rounded 
+                    hover:bg-blue-200
+                    ">
+                <p><Link href ="../">HomePage</Link></p>
+            </button>
         </div>
         
     
     );
 };
 
-export default favpage;
+export default Favpage;

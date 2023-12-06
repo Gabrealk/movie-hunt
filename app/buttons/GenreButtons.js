@@ -26,9 +26,9 @@ export default function GenreButton() {
                     onClick={() => setGenreDropdownOpen(!isGenreDropdownOpen)}
                     className="font-bold px-7 py-2 
                     text-black 
-                    bg-blue-700 border-2 
+                    bg-gray-600 border-2 
                     border-black m-4 rounded 
-                    hover:bg-blue-500"
+                    hover:bg-blue-200"
                     >
                     {selectedGenreOption}
                 </button>
