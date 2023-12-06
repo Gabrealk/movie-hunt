@@ -10,7 +10,7 @@ import RemoveFavourites from '@/components/RemoveFavourites';
 import Link from 'next/link';
 
 
-const Favpage = () => {
+const Page = () => {
     const [movies, setMovies] = useState([]);
     const [searchVaule, setSearchValue] = useState('');
     const [Favourites, setFavourites] = useState([]);
@@ -74,4 +74,4 @@ const Favpage = () => {
     );
 };
 
-export default Favpage;
+export default Page;
