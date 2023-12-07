@@ -3,7 +3,8 @@ import React from "react";
 const RemoveFavourites = () => {
     return (
         <>
-            <span className="mr-2">Remove From Favourites</span>
+            {/**provides the option to remove movies to your list when hovering the movie image in your favorite page*/}
+            <span className="mr-2">Remove From Favorites</span>
             <svg xmlns="http://www.w3.org/2000/svg" 
                 width="16" 
                 height="16" 
