@@ -17,12 +17,12 @@ import Link from 'next/link';
 const Page = () => {
     //Use state variables
     const [movies, setMovies] = useState([]);
-    const [searchVaule, setSearchValue] = useState('');
+    const [searchValue, setSearchValue] = useState('');
     const [Favourites, setFavourites] = useState([]);
 
     //Fetching the API
-    const getMovieRequest = async(searchVaule) => {
-        const url = `http://www.omdbapi.com/?s=${searchVaule}&apikey=2e023f33`;
+    const getMovieRequest = async(searchValue) => {
+        const url = `http://www.omdbapi.com/?s=${searchValue}&apikey=2e023f33`;
         const response = await fetch(url);
         const responsJson = await response.json();
        
@@ -32,8 +32,8 @@ const Page = () => {
     };
 
     useEffect(()=> {
-        getMovieRequest(searchVaule);
-    }, [searchVaule]);
+        getMovieRequest(searchValue);
+    }, [searchValue]);
 
     useEffect(() => {
         const movieFavourites = JSON.parse(localStorage.getItem('movie-fav-app')) || [];
