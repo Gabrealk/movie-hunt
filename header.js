@@ -11,8 +11,8 @@ export default function Headerspace() {
     <div className="flex">
         <font size = "10"><h1 className="font-bold text-white m-4">Movie-Hunt</h1></font>
         {/*calling the buttons that were imported */}
-        <GenreButton />
-        <YearButton />
+        {/**<GenreButton /> */}
+        {/*<YearButton />*/}
         <FavoritesButton />
     </div>
   )
